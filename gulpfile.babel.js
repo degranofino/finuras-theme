@@ -10,6 +10,8 @@ import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify';
 import named from 'vinyl-named';
 import browserSync from 'browser-sync';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 
 // Variable con las rutas ( paths )
 const paths = {
@@ -69,6 +71,7 @@ export const styles = () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(gulpif(PRODUCTION, cleanCSS({compatibility: 'ie8'})))
         .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
         .pipe(gulp.dest(paths.styles.dest))

@@ -1,0 +1,97 @@
+
+// --------------------------------------------------
+//		VARS
+// --------------------------------------------------
+
+
+
+// FONTS ========================================
+
+$font-family-sans-serif: "'Roboto', sans-serif";
+$font-family-serif: "'Playfair Display', serif";
+$font-family-monospace: "'JetBrains Mono', monospace";
+
+$h1-font-size: 64px;
+$h2-font-size: 40px;
+$h3-font-size: 26px;
+$h4-font-size: 22px;
+$h5-font-size: 18px;
+$h6-font-size: $h5-font-size;
+$new-font-sizes: (
+  7: $h5-font-size,
+  8: $h5-font-size,
+  9: $h5-font-size
+);
+$font-sizes: map-merge( $font-sizes, $new-font-sizes );
+
+// $font-weight-medium: 500; // no existeix
+// $font-weight-lighter:         lighter !default;
+// $font-weight-light:           300 !default;
+// $font-weight-normal:          400 !default;
+// $font-weight-bold:            700 !default;
+// $font-weight-bolder:          bolder !default;
+
+
+
+// COLORS ========================================
+
+$blue:      #006ed4;
+$orange:    #e36100;
+$red:       #cc112b;
+$turquoise: #0098b8;
+$green:     #009d70;
+
+$new-colors: (
+	"blue":      $blue,
+	"orange":    $orange,
+	"red":       $red,
+	"turquoise": $turquoise,
+	"green":     $green,
+);
+
+
+$primary:       $blue;
+$secondary:     $green;
+$complementary: #f6f6f6;
+$additional:  white;
+
+$new-theme-colors: (
+	"primary":   $primary,
+	"secondary": $secondary,
+	"complementary": $complementary,
+	"additional": $additional,
+);
+
+$new-utilities-text-colors: (
+	"blue":      $blue,
+	"orange":    $orange,
+	"red":       $red,
+	"turquoise": $turquoise,
+	"green":     $green,
+);
+
+$colors: map-merge( $colors, $new-colors ); //52
+$theme-colors: map-merge( $theme-colors, $new-theme-colors ); //81
+$utilities-text-colors: map-merge( $utilities-text-colors, $new-utilities-text-colors ); //426
+
+
+
+// BUTTONS ========================================
+
+$btn-padding-y: 12px;
+$btn-padding-x: 57px;
+$btn-font-weight: $font-weight-bold;
+$btn-border-radius: 4px;
+
+$theme-colors-btn-hover: (
+	"primary":    #0059c4,
+	"secondary":  #008b63,
+	"complementary": #e7e7e7,
+	"additional": white,
+	"success":    $success,
+	"info":       $info,
+	"warning":    $warning,
+	"danger":     $danger,
+	"light":      $light,
+	"dark":       $dark
+);
