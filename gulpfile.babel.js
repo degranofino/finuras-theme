@@ -72,7 +72,7 @@ export const styles = () => {
         .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([ autoprefixer() ]))
-        .pipe(gulpif(PRODUCTION, cleanCSS({compatibility: 'ie8'})))
+        // .pipe(gulpif(PRODUCTION, cleanCSS({compatibility: 'ie8'})))
         .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
         .pipe(gulp.dest(paths.styles.dest))
         // .pipe(server.stream()); // ?? Para que era esta funcion? 
@@ -127,7 +127,31 @@ export const scripts = () => {
                                 presets: ['@babel/preset-env'] //or ['babel-preset-env']
                             }
 			            }
-		            }
+		            },
+                    {
+                        test: /\.(scss)$/,
+                        use: [
+                          {
+                            loader: 'style-loader'
+                          },
+                          {
+                            loader: 'css-loader'
+                          },
+                          {
+                            loader: 'postcss-loader',
+                            options: {
+                              postcssOptions: {
+                                plugins: () => [
+                                  require('autoprefixer')
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            loader: 'sass-loader'
+                          }
+                        ]
+                      }
 		        ]
             },
 	        output: {

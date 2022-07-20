@@ -1,8 +1,6 @@
-
-// --------------------------------------------------
-//		VARS
-// --------------------------------------------------
-
+// @use "./node_modules/bootstrap/scss/functions" as *;
+// @use "./node_modules/bootstrap/scss/variables" as *;
+// @use "./node_modules/bootstrap/scss/mixins" as *;
 
 
 // FONTS ========================================
@@ -11,18 +9,29 @@ $font-family-sans-serif: "'Roboto', sans-serif";
 $font-family-serif: "'Playfair Display', serif";
 $font-family-monospace: "'JetBrains Mono', monospace";
 
-$h1-font-size: 64px;
-$h2-font-size: 40px;
+$h1-font-size: 10px;
+$h2-font-size: 16px;
 $h3-font-size: 26px;
 $h4-font-size: 22px;
 $h5-font-size: 18px;
 $h6-font-size: $h5-font-size;
+
+// $font-sizes: (
+//   1: 10px,
+//   2: 10rem,
+//   3: 7rem,
+//   4: 5rem,
+//   5: 3rem,
+//   6: 2rem,
+// );
+
 $new-font-sizes: (
   7: $h5-font-size,
   8: $h5-font-size,
   9: $h5-font-size
 );
-$font-sizes: map-merge( $font-sizes, $new-font-sizes );
+
+// $font-sizes: map-merge( $font-sizes, $new-font-sizes );
 
 // $font-weight-medium: 500; // no existeix
 // $font-weight-lighter:         lighter !default;
@@ -40,8 +49,10 @@ $orange:    #e36100;
 $red:       #cc112b;
 $turquoise: #0098b8;
 $green:     #009d70;
+$tomato:   tomato;
 
 $new-colors: (
+	// "tomato" : 	$tomato,
 	"blue":      $blue,
 	"orange":    $orange,
 	"red":       $red,
@@ -50,7 +61,7 @@ $new-colors: (
 );
 
 
-$primary:       $blue;
+$primary:       #00d412;
 $secondary:     $green;
 $complementary: #f6f6f6;
 $additional:  white;
@@ -60,9 +71,11 @@ $new-theme-colors: (
 	"secondary": $secondary,
 	"complementary": $complementary,
 	"additional": $additional,
+	// "tomato" : 	$tomato,
 );
 
 $new-utilities-text-colors: (
+	"tomato" : 	$tomato,
 	"blue":      $blue,
 	"orange":    $orange,
 	"red":       $red,
@@ -70,17 +83,15 @@ $new-utilities-text-colors: (
 	"green":     $green,
 );
 
-$colors: map-merge( $colors, $new-colors ); //52
-$theme-colors: map-merge( $theme-colors, $new-theme-colors ); //81
+// $colors: map-merge( $colors, $new-colors ); //52
+// $theme-colors: map-merge( $theme-colors, $new-theme-colors ); //81
 $utilities-text-colors: map-merge( $utilities-text-colors, $new-utilities-text-colors ); //426
-
-
 
 // BUTTONS ========================================
 
 $btn-padding-y: 12px;
 $btn-padding-x: 57px;
-$btn-font-weight: $font-weight-bold;
+// $btn-font-weight: $font-weight-bold;
 $btn-border-radius: 4px;
 
 $theme-colors-btn-hover: (
@@ -88,10 +99,10 @@ $theme-colors-btn-hover: (
 	"secondary":  #008b63,
 	"complementary": #e7e7e7,
 	"additional": white,
-	"success":    $success,
-	"info":       $info,
-	"warning":    $warning,
-	"danger":     $danger,
-	"light":      $light,
-	"dark":       $dark
+	// "success":    $success,
+	// "info":       $info,
+	// "warning":    $warning,
+	// "danger":     $danger,
+	// "light":      $light,
+	// "dark":       $dark
 );

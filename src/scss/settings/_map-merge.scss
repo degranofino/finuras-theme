@@ -1,0 +1,46 @@
+// @use "./node_modules/bootstrap/scss/functions" as *;
+// @use "./node_modules/bootstrap/scss/variables" as *;
+// @use "./node_modules/bootstrap/scss/mixins" as *;
+
+$font-sizes: map-merge( $font-sizes, $new-font-sizes );
+$colors: map-merge( $colors, $new-colors ); //52
+$theme-colors: map-merge( $theme-colors, $new-theme-colors ); //81
+// $utilities-text-colors: map-merge( $utilities-text-colors, $new-utilities-text-colors ); //426
+
+
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "color": map-merge(
+//       map-get($utilities, "color"),
+//       (
+//         values: map-merge(
+//           map-get(map-get($utilities, "color"), "values"),
+//           (
+//             $new-utilities-text-colors 
+//           ),
+//         ),
+//       ),
+//     ),
+//   )
+// );
+
+// BUTTONS ========================================
+
+$btn-padding-y: 12px;
+$btn-padding-x: 57px;
+$btn-font-weight: $font-weight-bold;
+$btn-border-radius: 4px;
+
+$theme-colors-btn-hover: (
+	"primary":    #0059c4,
+	"secondary":  #008b63,
+	"complementary": #e7e7e7,
+	"additional": white,
+	"success":    $success,
+	"info":       $info,
+	"warning":    $warning,
+	"danger":     $danger,
+	"light":      $light,
+	"dark":       $dark
+);
